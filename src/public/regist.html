@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせフォーム</title>
+  </head>
+  <body>
+    <h1>お問い合わせフォーム</h1>
+    <form action="/submit" method="post">
+      <div>
+        <label for="name">タイトル（必須）：</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="タイトル"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email：</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div>
+        <label for="message">お問合せ内容：</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="お問合せ内容(1000文字まで)をお書きください。"
+          required
+        ></textarea>
+      </div>
+      <button type="submit">送信</button>
+    </form>
+  </body>
+</html>

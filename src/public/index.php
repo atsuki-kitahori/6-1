@@ -1,2 +1,3 @@
 <?php
-echo 'Welcome TECH QUEST!';
+readfile('regist.html');
+?>
