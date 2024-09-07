@@ -7,26 +7,15 @@
   </head>
   <body>
     <h1>お問い合わせフォーム</h1>
-    <form action="/submit" method="post">
+    <p>以下のフォームに必要事項をご記入の上、送信ボタンを押してください。</p>
+    <form action="complete.php" method="post">
       <div>
-        <label for="name">タイトル（必須）：</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="タイトル"
-          required
-        />
+        <label for="title">タイトル（必須）：</label>
+        <input type="text" id="title" name="title" placeholder="タイトル" />
       </div>
       <div>
         <label for="email">Email：</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          required
-        />
+        <input type="email" id="email" name="email" placeholder="Email" />
       </div>
       <div>
         <label for="message">お問合せ内容：</label>
@@ -34,7 +23,6 @@
           id="message"
           name="message"
           placeholder="お問合せ内容(1000文字まで)をお書きください。"
-          required
         ></textarea>
       </div>
       <button type="submit">送信</button>
