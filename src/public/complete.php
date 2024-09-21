@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
 $title = $_POST['title'] ?? '';
 $email = $_POST['email'] ?? '';
 $content = $_POST['content'] ?? '';
@@ -20,6 +26,7 @@ if (empty($title) || empty($email) || empty($content)) {
     echo '<h1>送信完了！！！</h1>';
     echo '<br><a href="index.php">送信画面へ</a><br>';
     echo '<a href="history.php">送信履歴へ</a>';
+    echo '<a href="logout.php">ログアウト</a>';
 
     // データベースに接続
     $dbUserName = 'root';

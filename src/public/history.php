@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
 // データベースに接続
 $dbUserName = 'root';
 $dbPassword = 'password';
@@ -44,5 +50,6 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
     <br>
     <a href="index.php">送信画面へ戻る</a>
+    <a href="logout.php">ログアウト</a>
 </body>
 </html>
