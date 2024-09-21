@@ -31,6 +31,9 @@ session_start(); ?>
                 ログイン
             </button>
         </form>
+        <p class="mt-4 text-center">
+            アカウントをお持ちでない方は<a href="register.php" class="text-indigo-500 hover:underline">こちら</a>から登録してください。
+        </p>
     </div>
 </body>
 </html>
