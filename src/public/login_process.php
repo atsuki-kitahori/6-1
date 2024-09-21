@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$username = $_POST['username'] ?? '';
+$username_email = $_POST['username_email'] ?? '';
 $password = $_POST['password'] ?? '';
 
-if (empty($username) || empty($password)) {
-    echo 'ユーザー名とパスワードを入力してください。';
+if (empty($username_email) || empty($password)) {
+    echo 'ユーザー名/メールアドレスとパスワードを入力してください。';
     exit();
 }
 
@@ -17,8 +17,10 @@ $pdo = new PDO(
     $dbPassword
 );
 
-$stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username');
-$stmt->bindParam(':username', $username, PDO::PARAM_STR);
+$stmt = $pdo->prepare(
+    'SELECT * FROM users WHERE username = :username_email OR email = :username_email'
+);
+$stmt->bindParam(':username_email', $username_email, PDO::PARAM_STR);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
