@@ -5,7 +5,9 @@ $username_email = $_POST['username_email'] ?? '';
 $password = $_POST['password'] ?? '';
 
 if (empty($username_email) || empty($password)) {
-    echo 'ユーザー名/メールアドレスとパスワードを入力してください。';
+    $_SESSION['login_error'] =
+        'ユーザー名/メールアドレスとパスワードを入力してください。';
+    header('Location: login.php');
     exit();
 }
 
@@ -30,6 +32,7 @@ if ($user && password_verify($password, $user['password'])) {
     header('Location: index.php');
     exit();
 } else {
-    echo 'ユーザー名またはパスワードが間違っています。';
+    $_SESSION['login_error'] = 'ユーザー名またはパスワードが間違っています。';
+    header('Location: login.php');
     exit();
 }

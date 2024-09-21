@@ -1,3 +1,6 @@
+<?php
+session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,6 +12,12 @@
 <body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
     <div class="bg-white rounded-lg shadow-md p-8 max-w-md w-full">
         <h1 class="text-2xl font-bold mb-4">ログイン</h1>
+        <?php if (isset($_SESSION['login_error'])) {
+            echo '<p class="text-red-500 mb-4">' .
+                htmlspecialchars($_SESSION['login_error']) .
+                '</p>';
+            unset($_SESSION['login_error']);
+        } ?>
         <form action="login_process.php" method="post">
             <div class="mb-4">
                 <label for="username_email" class="block text-sm font-medium text-gray-700 mb-1">ユーザー名またはメールアドレス</label>
