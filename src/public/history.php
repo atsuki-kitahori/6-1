@@ -85,6 +85,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href="index.php" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">送信画面へ戻る</a>
         <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">ログアウト</a>
         <a href="bookmarked_history.php" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded ml-2">ブックマークした履歴</a>
+        <a href="export_csv.php" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded ml-2">CSV出力</a>
     </div>
 </body>
 </html>
